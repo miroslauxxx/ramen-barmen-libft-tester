@@ -1,3 +1,4 @@
+#include "ramen-barmen-libft-tester.h"
 void test_memcpy(void)
 {
         char memcpy_str1[11] = "0000000000";

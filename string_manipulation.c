@@ -1,3 +1,5 @@
+#include "ramen-barmen-libft-tester.h"
+
 void	test_strlen(void)
 {
 		char	*ft_strlen_str1 = "String";

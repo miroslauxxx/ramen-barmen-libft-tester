@@ -1,3 +1,5 @@
+#include "ramen-barmen-libft-tester.h"
+
 void	test_classification_functions(void)
 {
 		int i;
@@ -90,23 +92,23 @@ void	test_itoa(void)
 		printf("\t\033[0;35m>>> \033[0m%s()\033[0;35m <<<\033[0m\n", __func__);
 
 
-		g_assert_cmpstr(ft_itoa(42), ==, atoi("42"));
+		g_assert_cmpstr(ft_itoa(42), ==,"42");
 		printf("\033[0;32m %s() successfully passed test #1 \033[0m\n", __func__);
 		usleep(10000);
 
-		g_assert_cmpstr(ft_itoa(-42), ==, atoi("-42"));
+		g_assert_cmpstr(ft_itoa(-42), ==, "-42");
 		printf("\033[0;32m %s() successfully passed test #2 \033[0m\n", __func__);
 		usleep(10000);
 
-		g_assert_cmpstr(ft_itoa(0), ==, atoi("0"));
+		g_assert_cmpstr(ft_itoa(0), ==, "0");
 		printf("\033[0;32m %s() successfully passed test #3 \033[0m\n", __func__);
 		usleep(10000);
 
-		g_assert_cmpstr(ft_itoa(INT_MIN), ==, atoi("-2147483648"));
+		g_assert_cmpstr(ft_itoa(INT_MIN), ==,"-2147483648");
 		printf("\033[0;32m %s() successfully passed test #4 \033[0m\n", __func__);
 		usleep(10000);
 
-		g_assert_cmpstr(ft_itoa(INT_MAX), ==, atoi("-2147483647"));
+		g_assert_cmpstr(ft_itoa(INT_MAX), ==, "2147483647");
 		printf("\033[0;32m %s() successfully passed test #5 \033[0m\n", __func__);
 		usleep(10000);
 }
