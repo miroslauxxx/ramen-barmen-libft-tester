@@ -92,27 +92,33 @@ void    test_strlcat(void)
         printf("\033[0;32m %s() successfully passed test #4 \033[0m\n", __func__);
         usleep(80000);
 }
+
 void    test_strlcpy(void)
 {
-        char strlcpy_dst1[10] = "World";
-        char strlcpy_dst2[10] = "World";
-        char strlcpy_dst3[10] = "World";
-
         printf("\t\033[0;35m>>> \033[0m%s()\033[0;35m <<<\033[0m\n", __func__);
 
-        g_assert(ft_strlcpy(strlcpy_dst1, "Hello", 3) == 5);
-        g_assert_cmpstr(strlcpy_dst1, ==, "He");
+        char strlcpy_dst1[6] = "Hi";
+        g_assert(ft_strlcpy(strlcpy_dst1, "There", 4) == 5);
+        g_assert_cmpstr(strlcpy_dst1, ==, "The");
         printf("\033[0;32m %s() successfully passed test #1 \033[0m\n", __func__);
         usleep(10000);
 
-        g_assert(ft_strlcpy(strlcpy_dst2, "Hello", 6) == 5);
-        g_assert_cmpstr(strlcpy_dst2, ==, "Hello");
+        char strlcpy_dst2[6] = "Hi";
+        g_assert(ft_strlcpy(strlcpy_dst2, "There", 6) == 5);
+        g_assert_cmpstr(strlcpy_dst2, ==, "There");
         printf("\033[0;32m %s() successfully passed test #2 \033[0m\n", __func__);
         usleep(10000);
 
-        g_assert(ft_strlcpy(strlcpy_dst3, "Hello", 0) == 5);
-        g_assert_cmpstr(strlcpy_dst3, ==, "World");
+        char strlcpy_dst3[5] = "Hi";
+        g_assert(ft_strlcpy(strlcpy_dst3, "There", 0) == 5);
+        g_assert_cmpstr(strlcpy_dst3, ==, "Hi");
         printf("\033[0;32m %s() successfully passed test #3 \033[0m\n", __func__);
+        usleep(10000);
+
+        char strlcpy_dst4[5] = "Hi";
+        g_assert(ft_strlcpy(strlcpy_dst4, "", 5) == 0);
+        g_assert_cmpstr(strlcpy_dst4, ==, "");
+        printf("\033[0;32m %s() successfully passed test #4 \033[0m\n", __func__);
         usleep(80000);
 }
 
