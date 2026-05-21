@@ -30,6 +30,7 @@ void test_memcpy(void)
 void	test_memset(void)
 {
 		char memset_str[11] = "0000000000";
+		int arr[5]; 
 
 		printf("\t\033[0;35m>>> \033[0m%s()\033[0;35m <<<\033[0m\n", __func__);
 
@@ -46,6 +47,22 @@ void	test_memset(void)
 		g_assert(ft_memset(memset_str, '*', 5) == memset_str); 
 		g_assert_cmpstr(memset_str, ==, "*****00000");
 		printf("\033[0;32m %s() successfully passed test #3 \033[0m\n", __func__);
+		usleep(10000);
+
+		ft_memset(arr, 1, sizeof(arr));
+		for(int i = 0; i < 5; i++)
+		{
+			if (arr[i] != 16843009)
+				printf("memset error: %d", arr[i]);
+		}
+		printf("\033[0;32m %s() successfully passed test #4 \033[0m\n", __func__);
+
+		g_assert(ft_memset(memset_str, 289, 5) == memset_str); 
+		g_assert_cmpstr(memset_str, ==, "!!!!!00000");
+		printf("\033[0;32m %s() successfully passed test #3 \033[0m\n", __func__);
+		usleep(10000);
+
+
 		usleep(80000);
 }
 
